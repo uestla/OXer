@@ -1,0 +1,23 @@
+{
+	"name": "uestla/oxer",
+	"type": "library",
+	"description": "Simple Tic Tac Toe implementation in PHP",
+	"keywords": ["php", "tic-tac-toe", "tictactoe", "oxer"],
+	"homepage": "http://github.com/uestla/OXer",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Petr Kessler",
+			"homepage": "http://kesspess.1991.cz",
+			"role": "Developer"
+		}
+	],
+	"require-dev": {
+		"nette/tester": "^1.7"
+	},
+	"autoload": {
+		"psr-0": {
+			"OXer": "src/"
+		}
+	}
+}
