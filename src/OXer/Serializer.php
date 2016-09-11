@@ -30,7 +30,7 @@ class Serializer
 				. $game->getHeight() . self::SEP_DIMS
 				. $game->getWinningLength();
 
-		foreach ($game->getMovesList() as $move) {
+		foreach ($game->getMoves() as $move) {
 			$s .= self::SEP_MOVE . $move['x'] . self::SEP_COORD . $move['y'];
 		}
 
