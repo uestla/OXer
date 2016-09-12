@@ -116,6 +116,13 @@ class Game
 	}
 
 
+	/** @return array|NULL */
+	public function getLastMove()
+	{
+		return end($this->movesList) ?: NULL;
+	}
+
+
 	/** @return bool */
 	public function hasEnded()
 	{
