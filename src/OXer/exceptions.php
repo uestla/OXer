@@ -9,7 +9,7 @@
  * @link     https://github.com/uestla/OXer
  */
 
-namespace Oxer;
+namespace OXer;
 
 
 class InvalidBoardDimensionsException extends \Exception
