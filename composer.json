@@ -16,8 +16,6 @@
 		"nette/tester": "^1.7"
 	},
 	"autoload": {
-		"psr-0": {
-			"OXer": "src/"
-		}
+		"classmap": ["src/"]
 	}
 }
