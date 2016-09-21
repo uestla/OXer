@@ -17,7 +17,49 @@ test(function () {
 	}
 
 	$game->play(0, 0);
+
+	Assert::same([
+		'x' => 0,
+		'y' => 0,
+
+	], $game->getLastMove());
+
+	Assert::same([
+		['x' => 0, 'y' => 0]
+
+	], $game->getMoves());
+
+	Assert::same([
+		0 => [
+			0 => Game::PLAYER_O,
+		]
+
+	], $game->getMovesMap());
+
+
 	$game->play(1, 0);
+
+	Assert::same([
+		'x' => 1,
+		'y' => 0,
+
+	], $game->getLastMove());
+
+	Assert::same([
+		['x' => 0, 'y' => 0],
+		['x' => 1, 'y' => 0]
+
+	], $game->getMoves());
+
+	Assert::same([
+		0 => [
+			0 => Game::PLAYER_O,
+		],
+		1 => [
+			0 => Game::PLAYER_X,
+		],
+
+	], $game->getMovesMap());
 
 	Assert::true($game->isFieldTaken(0, 0));
 	Assert::true($game->isFieldTaken(1, 0));
