@@ -123,6 +123,13 @@ class Game
 	}
 
 
+	/** @return array */
+	public function getMovesMap()
+	{
+		return $this->movesMap;
+	}
+
+
 	/** @return bool */
 	public function hasEnded()
 	{
