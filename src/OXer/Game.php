@@ -187,10 +187,16 @@ class Game
 	}
 
 
-	/** @return bool */
+	/** @return bool|NULL */
 	public function getLastPlayer()
 	{
-		return count($this->movesList) % 2 === 0 ? self::PLAYER_X : self::PLAYER_O;
+		$moveCount = count($this->movesList);
+
+		if (!$moveCount) {
+			return NULL;
+		}
+
+		return $moveCount % 2 === 0 ? self::PLAYER_X : self::PLAYER_O;
 	}
 
 

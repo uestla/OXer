@@ -16,7 +16,11 @@ test(function () {
 		}
 	}
 
+	Assert::null($game->getLastPlayer());
+
 	$game->play(0, 0);
+
+	Assert::same(Game::PLAYER_O, $game->getLastPlayer());
 
 	Assert::same([
 		'x' => 0,
@@ -38,6 +42,8 @@ test(function () {
 
 
 	$game->play(1, 0);
+
+	Assert::same(Game::PLAYER_X, $game->getLastPlayer());
 
 	Assert::same([
 		'x' => 1,
