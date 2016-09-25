@@ -188,6 +188,17 @@ class Game
 
 
 	/** @return bool|NULL */
+	public function getPlayerOnTurn()
+	{
+		if ($this->ended) {
+			return NULL;
+		}
+
+		return count($this->movesList) % 2 === 0 ? self::PLAYER_O : self::PLAYER_X;
+	}
+
+
+	/** @return bool|NULL */
 	public function getLastPlayer()
 	{
 		$moveCount = count($this->movesList);

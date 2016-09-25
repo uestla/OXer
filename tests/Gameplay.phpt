@@ -12,15 +12,20 @@ test(function () {
 	for ($x = 1; $x <= $game->getWidth(); $x++) {
 		for ($y = 1; $y <= $game->getHeight(); $y++) {
 			Assert::false($game->isFieldTaken($x, $y));
-			Assert::same(NULL, $game->getField($x, $y));
+			Assert::null($game->getField($x, $y));
 		}
 	}
 
 	Assert::null($game->getLastPlayer());
+	Assert::same(Game::PLAYER_O, $game->getPlayerOnTurn());
+
+	Assert::same([], $game->getMovesMap());
+	Assert::same([], $game->getMoves());
 
 	$game->play(0, 0);
 
 	Assert::same(Game::PLAYER_O, $game->getLastPlayer());
+	Assert::same(Game::PLAYER_X, $game->getPlayerOnTurn());
 
 	Assert::same([
 		'x' => 0,
@@ -44,6 +49,7 @@ test(function () {
 	$game->play(1, 0);
 
 	Assert::same(Game::PLAYER_X, $game->getLastPlayer());
+	Assert::same(Game::PLAYER_O, $game->getPlayerOnTurn());
 
 	Assert::same([
 		'x' => 1,
@@ -126,4 +132,6 @@ function testGameEnd(Game $game, $x, $y, $winner, array $line)
 
 	Assert::same($winner, $game->getWinner());
 	Assert::same($line, $game->getWinningLine());
+
+	Assert::null($game->getPlayerOnTurn());
 }
