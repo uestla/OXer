@@ -1,11 +1,10 @@
 <?php
 
 /**
- * This file is part of the OXer component
- *
- * Copyright (c) 2016 Petr Kessler (http://kesspess.1991.cz)
+ * This file is part of the OXer package
  *
  * @license  MIT
+ * @author   Petr Kessler (https://kesspess.cz)
  * @link     https://github.com/uestla/OXer
  */
 
