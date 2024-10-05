@@ -1,0 +1,37 @@
+{
+	"name": "uestla/oxer",
+	"type": "library",
+	"description": "Gomoku in PHP",
+	"keywords": ["five-in-a-row", "gomoku", "oxer", "php"],
+	"homepage": "https://github.com/uestla/OXer",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Petr Kessler",
+			"homepage": "https://kesspess.cz",
+			"role": "Developer"
+		}
+	],
+
+	"autoload": {
+		"classmap": [
+			"lib"
+		]
+	},
+	"require-dev": {
+		"phpstan/extension-installer": "^1.4",
+		"phpstan/phpstan": "^1.12",
+		"phpstan/phpstan-strict-rules": "^1.6",
+		"nette/tester": "^2.5"
+	},
+	"scripts": {
+		"ci": ["@phpstan", "@tester"],
+		"phpstan": "phpstan analyse lib --level=max",
+		"tester": "tester tests/ --colors"
+	},
+	"config": {
+		"allow-plugins": {
+			"phpstan/extension-installer": true
+		}
+	}
+}
